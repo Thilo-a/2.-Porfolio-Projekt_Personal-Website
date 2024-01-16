@@ -1,0 +1,19 @@
+
+
+
+
+
+
+
+
+#arrow-1 {
+    content: "\003C";
+    font-size: 90px;
+    font-weight: 900;
+  }
+
+#arrow-2 {
+    content: "\003E";
+    font-size: 90px;
+    font-weight: 900;
+}
