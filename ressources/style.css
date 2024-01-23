@@ -7,17 +7,20 @@ body, html {
     font-family: 'Oswald', sans-serif;
 }
 
+/*Header section*/
+
 header {
-  position: fixed;
   top: 0%;
   width: 100%;
   height: 3rem;
   text-align: left;
   display: grid;
-  grid-template-columns: 3fr 5fr 3fr;
+  grid-template-columns: 3fr 6fr 3fr;
   grid-template-areas: "h6 nav contact" ;
   justify-items: center;
   align-items: center;
+  z-index: 1;
+  transition: background-color 0.6s ease-in-out;
 }
 
 header h6 {
@@ -25,6 +28,7 @@ header h6 {
   justify-self: left;
   margin-left: 1rem;
   font-size: 1rem;
+  font-weight: 400;
 }
 
 nav {
@@ -33,25 +37,226 @@ nav {
   text-align: center;
 }
 
+nav a {
+  text-decoration: none;
+  color: black;
+  margin-right: 1rem;
+}
+
 li {
   display: inline;
   margin-left: 1rem;
   width: 100%;
-
 }
 
-#contactme {
+header li:hover {
+  text-decoration: underline;
+}
+
+#button_a {
   grid-area: contact;
+  justify-self: end;
+  right: 0%;
+  margin-right: 1rem;
+  text-decoration: none;
 }
+
+.contact_button {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  height: 3rem;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.contact_button:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+.contact_button:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.contact_button:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.contact_button:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.contact_button:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.contact_button:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.contact_button:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.contact_button:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+header.fixed {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  align-items: start;
+  height: 5rem;
+  z-index: 6;
+}
+
+header.fixed h6 {
+  position: relative;
+  top: 0px;
+  margin-top: 0%;
+  padding-top: 2rem;
+}
+
+header.fixed #button_a {
+  position: absolute;
+  top: 0px;
+  padding-top: 1.2rem;
+}
+
+header.fixed nav {
+  padding-top: 2rem;
+}
+
+/* Main Section */
 
 main {
   position: relative;
   top: 4rem;
 }
 
-#landing_hintergrundbild {
-  background-image: url("ressources/images/Hintergrundbilder/Portfolio_Hintergrundbild_1.png");
-  z-index: 1;
+/* Landing section */
+
+#landing {
+  text-align: center;
+  margin-top: 20rem;
+  z-index: 3;
+}
+
+#landsentence {
+  width: 80%;
+  margin: auto;
+}
+
+#landsentence p {
+  border: 1px solid black;
+  border-radius: 1rem;
+  width: fit-content;
+  margin: auto;
+  padding: 2px 3rem 2px 3rem;
+}
+
+#landing a {
+  text-decoration: none;
+}
+
+#landingimages {
+  height: 90vh;
+  width: 80vw;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: auto;
+  margin-top: 10vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: transform 1s;
+}
+
+.image img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#image-2 {
+  transform: translateX(100%);
+}
+
+#image-3 {
+  transform: translateX(200%);
+}
+/*
+#image1 {
+  animation-delay: 0s;
+}
+
+animation: changeImage 22.5s linear infinite;
+  background: transparent;
+
+#image2 {
+  animation-delay: 7.5s;
+}
+
+#image3 {
+  animation-delay: 15s;
+  background-color: transparent;
+  fill: transparent;
+  width: fit-content;
+  height: fit-content;
+}
+
+@keyframes changeImage {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  33.33% {
+      transform: translateX(-100%);
+  }
+  66.66% {
+      transform: translateX(-200%);
+  }
+}
+*/
+
+body {
+  background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Hintergrundbilder/Hintergrundbild_Landing.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
@@ -70,7 +275,7 @@ main {
     top: 50%; /* Center objects vertically */
     transform: translate(-50%, -50%);
     animation: moveObjects 10s linear infinite; /* Adjust the duration as needed */
-    left: -10%;
+    left: -20%;
 }
 
 #rImage-1 {
@@ -115,20 +320,998 @@ main {
     }
 }
 
+/*Anfang Wer bin Ich section */
+
+#me {
+  margin-top: 4rem;
+  position: relative;
+  width: 100%;
+  height: 80rem;
+ /* background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Hintergrundbilder/Hintergrund_me_neu-4.png");
+ */ z-index: 1;
+}
+
+#me h2 {
+  margin-left: 9rem;
+  padding-top: 5rem;
+  font-size: 3rem;
+  font-weight: 400;
+  color: black;
+}
+
+#infosme {
+  margin: auto;
+  width: 80%;
+  height: 90rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 30rem 30rem;
+  grid-template-areas: 
+  "eins eins eins zwei zwei"
+  "drei drei vier vier vier";
+  row-gap: 1rem;
+  column-gap: 1rem;
+  justify-content: center;
+  justify-items: center;
+}
 
 
+.mebox {
+  text-align: left;
+  color: white;
+  border-radius: 2rem;
+  height: 100%;
+  width: 100%;
+  box-shadow: 3px 3px 1px #424242;
+  border: 0.5px solid #424242;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+#mebox-1 {
+  height: 100%;
+  font-size: 2.5rem;
+  grid-area: eins;
+  /*background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Mebox/Mebox_1_neu-2.png");*/
+}
+
+#mebox-1 p {
+  max-width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+#try_it_out {
+  font-size: 1.2rem;
+  margin-top: 7rem;
+  margin-left: 2rem;
+  text-decoration: underline;
+  color: 	#a9a9a9;
+  display: block;
+}
+
+#mebox-2 {
+  grid-area: zwei;
+  overflow: hidden;
+  text-align: center;
+}
+
+#mebox-3 {
+  text-align: center;
+  font-size: 5rem;
+  grid-area: drei;
+  /*background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Mebox/Mebox-3_neu.png");*/
+}
+
+#mebox-4 {
+  display: block;
+  grid-area: vier;
+  /*background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Mebox/Mebox_4_neu-2.png");*/
+}
+
+#mebox-4 ul {
+  display: block;
+  margin-top: 2rem;
+}
 
 
+#mebox-4 li {
+  display: block;
+  font-size: 3rem;
+  max-width: 80%;
+}
 
+
+#mebox-2 img {
+  object-fit: cover;
+  margin-top: 1rem;
+  border-radius: 25px;
+}
+
+/*Beginning Journey section*/
+
+#journey {
+  position: relative;
+  top: auto;
+  margin-top: 0px;
+  background: rgb(66,66,66);
+  background: linear-gradient(90deg, rgba(66,66,66,1) 0%, rgba(23,22,22,1) 100%);
+  height: 120vh;
+  padding: 0px;
+  width: 100%;
+  color: #fff;
+}
+
+#journey h2 {
+  margin-left: 9rem;
+  padding-top: 5rem;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+#timeline {
+  margin-top: 7rem;
+  width: 95%;
+  height: 70vh;
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-areas: "arrowone boxes arrowtwo";
+  justify-items: center;
+}
 
 #arrow-1 {
     content: "\003C";
     font-size: 90px;
     font-weight: 900;
+    grid-area: arrowone;
+    align-self: center;
+    cursor: pointer;
   }
 
 #arrow-2 {
     content: "\003E";
     font-size: 90px;
     font-weight: 900;
+    grid-area: arrowtwo;
+    align-self: center;
+    cursor: pointer;
+}
+
+.arrow:hover {
+  color: #dddddd;
+}
+
+.arrow:active {
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+
+#timebox {
+  grid-area: boxes;
+  position: relative;
+  align-self: center;
+  width: 100%;
+  height: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "boxone boxtwo bowthree";
+  column-gap: 2rem;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+#journey_box-1 {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#journey_box-2 {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#journey_box-3 {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#journey_box-3 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#journey_box-4 {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#journey_box-5 {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.contentbox {
+  display: none;
+  box-shadow: 2px 2px #424242;
+  border-radius: 25px;
+  background-color: #171616;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+
+.active {
+  display: block;
+}
+
+.sentence {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.date {
+  text-align: center;
+  margin: auto;
+  font-style: italic;
+  font-weight: 200;
+}
+
+/*Beginnig of Skills section*/
+#backgorund_skills_projects {
+  position: relative;
+  top: -10vh;
+  height: 370vh;
+  z-index: 3;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Hintergrundbilder/Hintergrundbild_Skills_Projects.png");
+}
+
+#skills {
+  position: relative;
+  height: 230vh;
+}
+
+#skills h2 {
+  margin-left: 6.5rem;
+  padding-top: 5rem;
+  font-size: 3rem;
+  font-weight: 400;
+  color: black;
+}
+
+#skills-languages {
+  margin: auto;
+  margin-top: 10rem;
+  width: 85%;
+  height: 150vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "firstimg firstbox firstbox"
+  "secondbox secondbox secondimg"
+  "thirdimg thirdbox thirdbox";
+  column-gap: 8vh;
+  row-gap: 20vh;
+  justify-items: center;
+  align-items: start;
+}
+
+#language_text_javascript {
+  grid-area: firstbox;
+  width: 100%;
+  height: 100%;
+}
+
+#skills_js_img {
+  grid-area: firstimg;
+  width: 100%;
+  height: 100%;
+}
+
+#language_text_Html_Css {
+  grid-area: secondbox;
+  width: 100%;
+  height: 100%;
+}
+
+#skills_html_css_img {
+  grid-area: secondimg;
+  width: 100%;
+  height: 100%;
+}
+
+#language_text_React {
+  grid-area: thirdbox;
+  width: 100%;
+  height: 100%;
+}
+
+#skills_react_img {
+  grid-area: thirdimg;
+  width: 100%;
+  height: 100%;
+}
+
+#skills-languages img {
+  border-radius: 25px;
+  box-shadow: 7px 7px 2px #dddddd;
+}
+
+.language_text {
+  position: relative;
+  top: 0;
+  margin-top: 0px;
+}
+
+.language_text p {
+  font-size: 1.4rem;
+}
+
+h4 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.language_text span {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+
+
+/*Beginning projects section*/
+
+#projects {
+  position: relative;
+  width: 100vw;
+}
+
+#projects h2 {
+  margin-left: 5rem;
+  padding-top: 5rem;
+  font-size: 3rem;
+  font-weight: 400;
+  color: black;
+}
+
+#project-boxes {
+  margin: auto;
+  margin-top: 10rem;
+  width: 90%;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 3vw;
+  grid-template-areas: "first second third";
+  align-content: start;
+  margin-top: 10rem;
+
+}
+
+
+#project-box-1 {
+  grid-area: first;
+  max-width: 100%;
+}
+
+#project-box-2 {
+  grid-area: second;
+  max-width: 100%;
+}
+
+#project-box-3 {
+  grid-area: third;
+  max-width: 100%;
+}
+
+.project-box img {
+  max-width: 100%;
+  border-radius: 25px 25px 0 0;
+  height: 35vh;
+}
+
+.project-box {
+  height: 60vh;
+  box-shadow: 10px 10px 2px #dddddd;
+  border-radius: 25px;
+  background-color: #171616;
+  color: white;
+}
+
+.project-box p {
+  margin: auto;
+  width: 90%;
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+#portfolio_link {
+  font-size: 1rem;
+}
+
+
+
+/*Beginning contactme section */
+
+#contactme {
+  color: white;
+  position: relative;
+  width: 100%;
+  bottom: 20vh;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Hintergrundbilder/Hintergrund_contact_2.png");
+  background-position: center center;
+}
+
+#contactme h2 {
+  margin-left: 9rem;
+  padding-top: 11rem;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+#personal_info {
+  margin-left: 9rem;
+  padding-top: 5rem;
+}
+
+#personal_info h4 {
+  font-size: 1.2rem;
+}
+
+#personal_info h5 {
+  font-size: 1rem;
+}
+
+#contact_formular {
+  margin-left: 9rem;
+  padding-top: 5rem;
+  font-size: 1.4rem;
+}
+
+#contact_formular button {
+  margin-left: 2rem;
+}
+
+
+
+
+/*Beginning footer section*/ 
+
+footer {
+  width: 100%;
+  height: 10vh;
+  position: relative;
+  bottom: 20vh;
+  background-color: #fff;
+  border-top: #171616;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "one two three";
+  justify-items: center;
+}
+
+
+#copyright {
+  grid-area: one;
+  justify-self: start;
+  margin-left: 2rem;
+}
+
+#footer_name {
+  grid-area: two;
+}
+
+#sozial {
+  grid-area: three;
+}
+
+
+/* Beginning of the responsive design section */
+@media only screen and (min-width: 2100px) {
+  html {
+    font-size: 35px;
+  }
+
+  .contact_button {
+    height: ;
+  }
+
+  .Rotating {
+    height: 250px;
+    width: 450px;
+  }
+
+  #mebox-2 img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 1600px)and (max-width: 2100px){
+  html {
+    font-size: 25px;
+  }
+  #contactme {
+    height: 70vh;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width:1111px){
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Hintergrundbilder/Hintergrundlanding_Bildschirme_unter_1200px.png");
+  }
+
+  #mebox-1 {
+    font-size: 2rem;
+  }
+
+  #mebox-4 li {
+    font-size: 2.5rem;
+  }
+
+  #projects {
+    position: relative;
+    height: 200vh;
+  }
+
+  #project-boxes {
+    display: block;
+  }
+
+  .project-box {
+    width: 100%;
+    height: 60vh;
+    margin-bottom: 6vh;
+  }
+
+  #project-box-3 {
+    margin-bottom: 0px;
+  }
+  
+  .project-box img {
+    width: 100%;
+    height: 45vh;
+  }
+
+  #projects h2 {
+    padding-top: 0;
+  }
+
+  #backgorund_skills_projects {
+    background-size: cover;
+    height: 500vh;
+    background-repeat: no-repeat;
+    background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Hintergrundbilder/Hintergrund2_Bildschirme_unter_1200px.png");
+  }
+
+}
+
+@media only screen and (min-width: 480px) and (max-width:767px) {
+  html {
+    font-size: 11px;
+  }
+
+  body {
+    background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Hintergrundbilder/Hintergrundlanding_Bildschirme_unter_1200px.png");
+  }
+
+  #backgorund_skills_projects {
+    background-size: cover;
+    height: 500vh;
+    background-repeat: no-repeat;
+    background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Hintergrundbilder/Hintergrund2_Bildschirme_unter_1200px.png");
+  }
+
+  #project-boxes {
+    display: block;
+  }
+
+  .project-box {
+    width: 100%;
+    height: 60vh;
+    margin-bottom: 6vh;
+  }
+
+  #project-box-3 {
+    margin-bottom: 0px;
+  }
+  
+  .project-box img {
+    width: 100%;
+    height: 45vh;
+  }
+
+  #projects h2 {
+    padding-top: 0;
+    margin-left: 3.5rem;
+  }
+
+  #skills h2 {
+    margin-left: 3.5rem;
+  }
+
+  header h6 {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding-top: 2rem;
+  }
+
+  #mebox-1 {
+    font-size: 2rem;
+  }
+
+  #mebox-3 {
+    font-size: 4.8rem;
+    text-align: center;
+  }
+
+  #mebox-2 {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  #mebox-2 img {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  #mebox-4 li {
+    font-size: 2rem;
+  }
+
+  #skills-languages {
+    column-gap: 4vw;
+  }
+
+  #landingimages {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .images {
+    width: 100%;
+    height: 100%;
+  }
+
+  .Rotating {
+    width: 30vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 10px;
+  }
+
+  body {
+    background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Hintergrundbilder/Hintergrundlanding_Bildschirme_unter_1200px.png");
+  }
+
+  #backgorund_skills_projects {
+    background-size: cover;
+    height: 500vh;
+    background-repeat: no-repeat;
+    background-image: url("/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/ressources/images/Hintergrundbilder/Hintergrund2_Bildschirme_unter_1200px.png");
+  }
+
+  #project-boxes {
+    display: block;
+  }
+
+  .project-box {
+    width: 100%;
+    height: 60vh;
+    margin-bottom: 6vh;
+  }
+
+  #project-box-3 {
+    margin-bottom: 0px;
+  }
+  
+  .project-box img {
+    width: 100%;
+    height: 45vh;
+  }
+
+  #projects h2 {
+    padding-top: 0;
+    margin-left: 3.5rem;
+  }
+
+  #skills h2 {
+    margin-left: 3.5rem;
+  }
+
+  header {
+    
+  }
+  
+  header ul {
+    display: block;
+    width: 100%;
+  }
+
+  header li {
+    position: relative;
+    left: 0;
+    display: block;
+    width: 100%;
+    padding-top:1rem;
+    padding-bottom: 1rem;
+    margin: 0;
+    font-size: 13px;
+    background: rgb(66,66,66);
+    background: linear-gradient(90deg, rgba(66,66,66,1) 0%, rgba(23,22,22,1) 100%);
+  }
+
+  header li:hover {
+    background: rgb(116,116,116);
+background: linear-gradient(90deg, rgba(116,116,116,1) 0%, rgba(68,68,68,1) 100%);
+  }
+
+  header a {
+    margin: auto;
+    width: 100%;
+    color: white;
+  }
+
+  header a:hover {
+    text-decoration: underline;
+  }
+
+  header nav {
+    padding: 0;
+    margin: 0;
+    left: 0;
+    grid-area: unset;
+    position: absolute;
+    top: 5rem;
+    display: block;
+    width: 100vw;
+    height: 35vh;
+    display: none;
+  }
+
+  header.active nav {
+    display: initial;
+  }
+
+  header.fixed nav {
+    padding: 0;
+  }
+
+  #button_a {
+    display: none;
+    grid-area: unset;
+  }
+
+  #menubutton {
+    position: absolute;
+    right: 1rem;
+    top:5px;
+    z-index: 5;
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #menubutton::before {
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    background-color: black;
+    transform: translateY(-12px);
+    box-shadow: 0 12px black;
+  }
+
+  #menubutton::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    background-color: black;
+    transform: translateY(12px);
+  }
+
+  header.active #menubutton::before {
+    transform: rotate(45deg);
+    box-shadow: none;
+  }
+
+  header.active #menubutton::after {
+    transform: rotate(315deg);
+  }
+
+  #landingimages {
+    height: 50vh;
+    width: 95vw;
+  }
+
+  .Rotating {
+    width: 30vw;
+    height: auto;
+  }
+
+
+  #me {
+    height: 155vh;
+  }
+
+  #me h2 {
+    margin-left: 2rem;
+  }
+
+  #infosme {
+    display: block;
+    width: 90vw;
+  }
+
+  .mebox {
+    text-align: center;
+    height: 30vh;
+    margin-top: 1rem;
+  }
+
+  #mebox-1 {
+    font-size: 2.4rem;
+    height: 30vh;
+  }
+
+  #mebox-2 {
+    height: 40vh;
+  }
+
+  .mebox img {
+    height: 40vh;
+    width: 90%;
+    image-rendering: crisp-edges;
+  }
+
+  #mebox-4 li {
+    font-size: 2.5rem;
+  }
+
+  #journey {
+    text-align: center;
+    height: 160vh;
+  }
+
+  #journey h2 {
+    margin: auto;
+  }
+
+  #timeline {
+    height: 120vh;
+    display: block;
+    text-align: center;
+  }
+
+  #timebox {
+    text-align: center;
+    display: block;
+    height: 25vh;
+    position: relative;
+    left: 0.8rem;
+  }
+
+  .sentence {
+   padding-top: 7rem;
+  }
+
+  .contentbox {
+    width: 100%;
+    display: none;
+  }
+
+  .active {
+    display: block;
+  }
+
+  #journey_box-3 .sentence {
+    padding: 3px;
+  }
+
+  #journey_box-3 img {
+    height: 60%;
+  }
+
+  #arrow-1 {
+    transform: rotate(90deg);
+    display: block;
+    margin-left: 2rem;
+  }
+
+  #arrow-2 {
+    transform: rotate(90deg);
+    z-index: 5;
+    display: block;
+    position: absolute;
+    bottom: 20vh;
+    margin-left: 45vw;
+  }
+
+  #skills {
+    height: 170dvh;
+  }
+
+  #skills-languages {
+    display: block;
+  }
+
+  #skills-languages img {
+    display:none;
+  }
+
+  .language_text {
+    height: 50vh;
+    font-size: 1.5rem;
+  }
+
+  #language_text_javascript {
+    height: 50vh;
+  }
+
+  #language_text_Html_Css {
+    height: 50vh;
+  }
+
+  #language_text_React {
+    height: 50vh;
+  }
+
+  #backgorund_skills_projects {
+    height: 400dvh;
+  }
+
+  #contactme {
+    height: 80dvh;
+  }
+
+  #contactme h2 {
+    margin-top: 9rem;
+    margin-left: 2.5rem;
+  }
+
+  #personal_info {
+    margin-left: 2.5rem;
+  }
+
+  #contact_formular {
+    margin-top: 8rem;
+    margin-left: 2.5rem;
+  }
+
 }

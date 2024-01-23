@@ -9,33 +9,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Merriweather:ital,wght@0,400;0,900;1,400&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="landing_hintergrundbild">
     <header>
         <h6>Thilo Altrogge</h6>
+        <div id="menubutton"></div>
         <nav>
-            <li><a href="#me">ME</a></li>
+            <li><a href="#me">Who am I?</a></li>
             <li><a href="#journey">Programming Journey</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
         </nav>
-        <a href="#contactme"><button>Contact Me!</button></a>
+        <a id="button_a" href="#contactme"><button class="contact_button">Contact Me!</button></a>
     </header>
     <main>
         <div id="landing">
             <div id="landsentence">
                 <p>Thilo Altrogge</p>
                 <h1>„The biggest risk is not taking any risk… In a world that changing really quickly, the only strategy that is guaranteed to fail is not taking risks.“</h1>
-                <a href="#contactme"><button>Contact Me! -> </button></a>
+                <a href="#contactme"><button class="contact_button">Contact Me!</button></a>
             </div>
-            <div id="landingimage">
-                <img src="ressources/images/Projects Sreenshots/RWK.png" alt="Image of a website devoloped by me from a local soccer club">
+            <div id="landingimages">
+                <div class="image" id="image-1"><img src="ressources/images/Projects Sreenshots/RWK.png" alt="Picture of a website from a local soccer club"></div>
+                <div class="image" id="image-2"><img src="ressources/images/Projects Sreenshots/Terra.png" alt="Image of a website from a big it company Terra"></div>
+                <div class="image" id="image-3"><img src="ressources/images/Projects Sreenshots/Satz Generator.png" alt="Image of a porfolio Project. Random sentence generator written with JavaScript"></div>
             </div>
             <div id="rotatingimages">
                 <img class="Rotating" id="rImage-1" src="ressources/images/Programmiersprachen/CSS 100x250px.png" alt="Image of the CSS image">
                 <img class="Rotating" id="rImage-2" src="ressources/images/Programmiersprachen/HTML 100x250px.png" alt="Image of the HTML image">
-                <img class="Rotating" id="rImage-3" src="ressources/images/Programmiersprachen/JavaScript 100x250px.png" alt="Image of the JavaScript image">
+                <img class="Rotating" id="rImage-3" src="ressources/images/Programmiersprachen/Rotating_img_JS.svg" alt="Image of the JavaScript image">
                 <img class="Rotating" id="rImage-4" src="ressources/images/Programmiersprachen/Node.js 100x250px.png" alt="Image of the Node.js image">
                 <img class="Rotating" id="rImage-5" src="ressources/images/Programmiersprachen/React 100x250px.png" alt="Image of the React image">
                 <img class="Rotating" id="rImage-6" src="ressources/images/Programmiersprachen/SQL 100x250px.png" alt="Image of the SQL image">
@@ -43,13 +49,14 @@
         </div>
     </div>
         <div id="me">
-            <h2>Wer bin Ich ?</h2>
+            <h2>Who am I?</h2>
             <div id="infosme">
                 <div class="mebox" id="mebox-1">
-                    <p>I want to write code that brings people together. Using the big oportunity of the Internet to create something bigger than ourselve</p>
+                    <p>"I want to write code that brings people together. Using the big oportunity of the Internet to create something bigger than ourselve"</p>
+                    <a id="try_it_out" href="#products">Explore it yourselv!</a>
                 </div>
                 <div class="mebox" id="mebox-2">
-                    <img src="ressources/images/Foto von mir.jpeg" alt="Image of me">
+                   <img src="ressources/images/Bild_von_mir.jpeg" alt="Image of me">
                 </div>
                 <div class="mebox" id="mebox-3">
                     <p>Full Stack Engener</p>
@@ -66,7 +73,7 @@
         <div id="journey">
             <h2>Programming Journey</h2>
             <div id="timeline">
-                <span id="arrow-1">&#60;</span>
+                <span class="arrow" id="arrow-1">&#60;</span>
                 <div id="timebox">
                     <div class="contentbox" id="journey_box-1">
                         <p class="sentence">Had the idea of building a sozail media platform for musik</p>
@@ -78,8 +85,8 @@
                     </div>
                     <div class="contentbox" id="journey_box-3">
                         <p class="sentence">Discovered the WEB-STACK and startet building my first websites</p>
-                        <p class="date">November 2022</p>
                         <img src="ressources/images/Projects Sreenshots/First Website.png" alt="Image of my first Website">
+                        <p class="date">November 2022</p>
                     </div>
                     <div class="contentbox" id="journey_box-4">
                         <p class="sentence">Finished the Full-Stack-Develper course on Codecademy</p>
@@ -90,33 +97,30 @@
                         <p class="date">Soon</p>
                     </div>
                 </div>
-                <span id="arrow-2">&#62;</span>
+                <span class="arrow" id="arrow-2">&#62;</span>
             </div>
         </div>
+        <section id="backgorund_skills_projects">
         <div id="skills">
             <h2>Skills</h2>
             <div id="skills-languages">
-                <div class="languages-box" id="skills-javascript">
                     <div class="language_text" id="language_text_javascript">
                         <h4>JavaScript</h4>
-                        <p>Very good knowledge of both the frontend and the backend. "Once you have really mastered JS, there are almost no limits."</p>
+                        <p>JavaScript is a crucial programming language for web developers, enabling the creation of dynamic and interactive websites. It empowers developers to respond to user actions, update content in real-time, and fetch data asynchronously without page reloads. With its versatility and widespread use, JavaScript forms the backbone of modern web development, facilitating the creation of engaging and seamless user experiences. I have very good knowledge of both the frontend and the backend.
+                            <br><br><em>"Once you have really mastered JS, there are almost no limits."</em><br><span>Brendan Eich, August 2010</span>
+                        </p>
                     </div>
-                    <img src="ressources/images/Programmiersprachen/JavaScript code 500x500px.png" alt="Image of JavaScript code">
-                </div>
-                <div class="languages-box" id="skills-Html_Css">
+                    <img id="skills_js_img" src="ressources/images/Programmiersprachen/JavaScript code 500x500px.png" alt="Image of JavaScript code">             
                     <div class="language_text" id="language_text_Html_Css">
                         <h4>HTML & CSS</h4>
-                        <p>Efficient construction and high-quality design are among my core competencies. Examples of the construction and design can be seen in the <a href="#projects">Projects</a>.</p>
+                        <p>HTML (Hypertext Markup Language) structures web content, defining elements like text, images, and links. CSS (Cascading Style Sheets) styles and enhances the visual presentation, controlling colors, fonts, and layouts. Together, they form the core tools for web developers, enabling the creation of organized, visually appealing, and responsive websites. Proficiency in HTML and CSS is essential for building a strong foundation in web development.<br>Efficient construction and high-quality design are among my core competencies. <br><br><em>Examples of the construction and design can be seen in the <a href="#projects">Projects</a>.</em></p>
                     </div>
-                    <img src="ressources/images/Programmiersprachen/HTML & CSS code 500x500px.png" alt="Image of CSS code">
-                </div>
-                <div class="languages-box" id="skills-React">
+                    <img id="skills_html_css_img" src="ressources/images/Programmiersprachen/HTML & CSS code 500x500px.png" alt="Image of CSS code">               
                     <div class="language_text" id="language_text_React">
                         <h4>React</h4>
-                        <p>You want interactive pages ? With React you can do just that. "User experience at its best"</p>
+                        <p>React, a JavaScript library by Facebook, revolutionizes web development with a component-based approach for building interactive and dynamic user interfaces. Its declarative syntax and efficient rendering make development more streamlined and maintainable. Essential for web developers, React's popularity and versatile ecosystem ensure the creation of modern, high-performance applications with ease.<br><br><em>"User experience at its best"</em><br><span>Jordan Walke, December 2012</span> </p>
                     </div>
-                    <img src="ressources/images/Programmiersprachen/React code 500x500px.png" alt="Image of React code">
-                </div>
+                    <img id="skills_react_img" src="ressources/images/Programmiersprachen/React code 500x500px.png" alt="Image of React code">
             </div>
         </div>
         <div id="projects">
@@ -124,18 +128,23 @@
             <div id="project-boxes">
                 <div class="project-box" id="project-box-1">
                     <img src="ressources/images/Projects Sreenshots/Terra.png" alt="landing page from the Wortmann AG">
-                    <p>Landingpage for the Wortmann AG. A giant IT-Company</p>
+                    <p>Landingpage for the Wortmann AG. A giant IT-Company based in Hüllhorst.</p>
+                    <p id="portfolio_link">Check it out <a href="file:///Users/thiloaltrogge/Documents/Programieren/Projects/codeacadamy/challange%20projekt%20nr.%203%20(Company%20page)(Terra)/index.html" target="_blank">here!</a></p>
                 </div>
                 <div class="project-box" id="project-box-2">
                     <img src="ressources/images/Projects Sreenshots/RWK.png" alt="landing page from a local soccer club">
-                    <p>Landingpage for a local soccer club. RWK Kirchlengern</p>
+                    <p>Landingpage for a local soccer club. RWK Kirchlengern. Shows the user the news and upcoming events of the club</p>
+                    <p id="portfolio_link">Check it out <a href="file:///Users/thiloaltrogge/Documents/Programieren/Projects/codeacadamy/challange%20projekt%20nr.%203%20(Company%20page)(Terra)/index.html" target="_blank">here!</a></p>
                 </div>
                 <div class="project-box" id="project-box-3">
                     <img src="ressources/images/Projects Sreenshots/Satz Generator.png" alt="image of a random sentence generator">
-                    <p>First Portfolio Project: Random Sentence Generator(written with JavaScript).</p>
+                    <p>First Portfolio Project: Random Sentence Generator(written with JavaScript). You can select your topic. When you click on go the code will output a ranadom sentence based on your selected topic.
+                    </p>
+                    <p id="portfolio_link">Check it out <a href="file:///Users/thiloaltrogge/Documents/Programieren/Projects/codeacadamy/challange%20projekt%20nr.%203%20(Company%20page)(Terra)/index.html" target="_blank">here!</a></p>
                 </div>
             </div>
         </div>
+        </section>
         <div id="contactme">
             <h2>Contact me</h2>
             <div id="personal_info">
@@ -145,15 +154,15 @@
                 <h5>E-Mail: thilo.altroge@outlook.de</h5>
             </div>
             <div id="contact_formular">
-                <h5>Or send an direct request here: <button>Contact ME!</button></h5>
+                <h5>Or send an direct request here: <button class="contact_button">Contact ME!</button></h5>
             </div>
         </div>
     </main>
     <footer>
-        <h6>&copy;</h6>
-        <h6>Thilo Altrogge</h6>
-        <h6>Sozial Media</h6>
+        <h6 id="copyright">&copy;copyright</h6>
+        <h6 id="footer_name">Thilo Altrogge</h6>
+        <h6 id="sozial_media">Sozial Media: Hier folgen Icons</h6>
     </footer>
-    <script src="script.js"></script>
+    <script src="/Users/thiloaltrogge/Documents/Programieren/Projects/Portfolio Projekts/2. Porfolio Projekt_Personal Website/script.js"></script>
 </body>
 </html>
